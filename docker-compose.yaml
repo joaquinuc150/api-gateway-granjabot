@@ -1,0 +1,12 @@
+services:
+  demo_04_api_gateway:
+    build: .
+    ports:
+      - "4000:80"
+    volumes:
+      - .:/code
+
+networks:
+  default:
+    name: microsvcs
+    external: true

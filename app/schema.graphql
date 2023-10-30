@@ -1,0 +1,73 @@
+type Plant {
+    id: ID!
+    name: String!
+    daysToGrow: Int!
+    lifeExpectancy: Int!
+    minHarvest: Int!
+    maxHarvest: Int!
+    description: String
+}
+
+type Farm {
+    id: ID!
+    userId: ID!
+    currentSize: Int!
+    maxSize: Int!
+    nextTier: Int!
+    constructions: [Construction]
+}
+
+type Construction {
+    id: ID!
+    isBuilt: Boolean
+    plantId: ID
+    hasPlant: Boolean
+    posX: Int!
+    posY: Int!
+    daysTillDone: Int
+    hp: Int
+    isWatered: Boolean
+}
+
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    password: String!
+    farmId: ID
+}
+
+type Weather {
+    temp: Float!
+    prep: Float!
+}
+
+type Ad {
+    name: String!
+    description: String!
+}
+
+type Query {
+    getPlants: [Plant]
+    getFarm(userId: ID): Farm
+    getConstructions(userId: ID): [Construction]
+    getUsers: [User]
+    getAds: [Ad]
+    getWeather(city: String!): Weather
+}
+
+type Mutation {
+    addPlant(userId: ID!, plantName: String!, posX: Int, posY: Int): Construction
+    addFarm(userId: ID!, currentSize: Int!, maxSize: Int!, nextTier: Int!): Farm
+    addConstruction(farmId: ID!, plantId: ID!, isBuilt: Boolean!, posX: Int!, posY: Int!, daysTillDone: Int!, isWatered: Boolean!): Construction
+    addUser(username: String!, email: String!, password: String!, farmId: ID!): User
+    addAd(name: String!, description: String!): Ad
+}
+
+type Subscription {
+    plantAdded: Plant
+    farmAdded: Farm
+    constructionAdded: Construction
+    userAdded: User
+    adAdded: Ad
+}
