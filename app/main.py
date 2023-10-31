@@ -76,10 +76,10 @@ def resolve_get_weather(obj, resolve_info: GraphQLResolveInfo, city):
 def resolver_create_plant(obj, resolve_info: GraphQLResolveInfo, userId, plantName, posX, posY):
     payload = dict(userId=userId, plantName=plantName, posX=posX, posY=posY)
 
-    response = requests.post(f"{url_services['Granja']}/plants", json=payload)
+    response = requests.post(f"{url_services['Granja']}/plants", params=payload, headers={'content-type':'application/json'})
 
     if response.status_code == 200:
-        return response.json()
+        return payload
     
 @mutation.field("addAd")
 async def resolver_create_ad(obj, resolve_info: GraphQLResolveInfo, name, description):

@@ -47,6 +47,13 @@ type Ad {
     description: String!
 }
 
+type PlantResponse {
+    userId: ID!
+    plantName: String!
+    posX: Int!
+    posY: Int!    
+}
+
 type Query {
     getPlants: [Plant]
     getFarm(userId: ID): Farm
@@ -57,7 +64,7 @@ type Query {
 }
 
 type Mutation {
-    addPlant(userId: ID!, plantName: String!, posX: Int, posY: Int): Construction
+    addPlant(userId: ID!, plantName: String!, posX: Int!, posY: Int!): PlantResponse
     addFarm(userId: ID!, currentSize: Int!, maxSize: Int!, nextTier: Int!): Farm
     addConstruction(farmId: ID!, plantId: ID!, isBuilt: Boolean!, posX: Int!, posY: Int!, daysTillDone: Int!, isWatered: Boolean!): Construction
     addUser(username: String!, email: String!, password: String!, farmId: ID!): User
