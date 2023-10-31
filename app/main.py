@@ -1,7 +1,6 @@
 import time
 import logging
 import requests
-import asyncio
 import json
 
 from ariadne import (QueryType,
@@ -98,7 +97,7 @@ async def latest_ad_subscription(_, info):
             yield json.loads(ad.message)
 
 @subscription.field("adAdded")
-def ad_added(obj, info):
+def resolve_ad_added(obj, info):
     return obj
 
 schema = make_executable_schema(type_defs, query, mutation, subscription, plants, farm, construction, user, ad)
