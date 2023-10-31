@@ -38,8 +38,8 @@ type User {
 }
 
 type Weather {
-    temp: Float!
-    prep: Float!
+    temperatura: Float!
+    precipitacion: Float!
 }
 
 type Ad {
