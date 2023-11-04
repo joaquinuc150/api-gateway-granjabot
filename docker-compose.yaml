@@ -2,7 +2,7 @@ services:
   demo_04_api_gateway:
     build: .
     ports:
-      - "4000:80"
+      - "4000:4000"
     volumes:
       - .:/code
 
