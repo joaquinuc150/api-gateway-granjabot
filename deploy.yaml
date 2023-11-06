@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: api-gateway-clima-container
-          image: ghcr.io/joaquinuc150/api-gateway-granjabot:latest
+          image: ghcr.io/joaquinuc150/api-gateway-granjabot:main
 
           ports:
             - containerPort: 4000
