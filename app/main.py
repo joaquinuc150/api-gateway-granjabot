@@ -19,10 +19,10 @@ from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 
 url_services = {
-    "Granja": "http://granja-service",
+    "Granja": "http://granja-service:5001",
     "Ad": "http://microservicio_anuncio-demo_01_service_01-1",
-    "Usuarios": "http://service_users-tarea_u4_service_users-1",
-    "Clima": "http://clima-triste-service"
+    "Usuarios": "http://tarea_u4_service_users",
+    "Clima": "http://clima-triste-service:3005"
 }
 
 type_defs = load_schema_from_path("./app/schema.graphql")
