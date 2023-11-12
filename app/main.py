@@ -21,7 +21,7 @@ from starlette.middleware.cors import CORSMiddleware
 url_services = {
     "Granja": "http://granja-service:5001",
     "Ad": "http://microservicio_anuncio-demo_01_service_01-1",
-    "Usuarios": "http://tarea_u4_service_users",
+    "Usuarios": "http://tarea.u4-service-users",
     "Clima": "http://clima-triste-service:3005"
 }
 
