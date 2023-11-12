@@ -109,7 +109,7 @@ graphql = GraphQL(
 )
 
 middleware = [
-    Middleware(CORSMiddleware, allow_origins=['*'], allow_methods=("GET", "POST", "OPTIONS"))
+    Middleware(CORSMiddleware, allow_origins=['https://frontclima.demo.inf326.nursoft.dev'], allow_methods=("GET", "POST", "OPTIONS"))
 ]
 
 
